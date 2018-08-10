@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import 'typeface-rubik'
+import Notifications from 'react-notify-toast';
 
 import Header from '../components/Header'
 import './index.css'
@@ -16,6 +17,7 @@ const Layout = ({ children, data }) => (
         { name: 'viewport', content: 'width=device-width, user-scalable=no' },
       ]}
     />
+    <Notifications/>
     <Header siteTitle={data.site.siteMetadata.title} />
     <div
       style={{

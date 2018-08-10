@@ -5,7 +5,7 @@ import { List } from 'react-feather'
 import { ellipsis } from 'polished'
 
 const Container = styled.div`
-  background-color: #90D4A8;
+  background: #90D4A8;
   padding: 8px 16px;
   display: flex;
   align-items: center;
