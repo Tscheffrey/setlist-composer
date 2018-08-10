@@ -3,18 +3,26 @@ import Link from 'gatsby-link'
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 import ListItem from '../components/ListItem'
 import Shortid from 'shortid'
+import styled from 'styled-components';
 
 const SortableItem = SortableElement(({value}) =>
   <ListItem item={value} />
 );
 
+const SortableListContainer = styled.ul`
+  background: #efefef;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  overflow: hidden;
+`
+
 const SortableList = SortableContainer(({items}) => {
   return (
-    <ul>
+    <SortableListContainer>
       {items.map((item, index) => (
         <SortableItem key={item.key} index={index} value={item} />
       ))}
-    </ul>
+    </SortableListContainer>
   );
 });
 
@@ -46,7 +54,7 @@ class SortableComponent extends React.Component {
     });
   };
   render() {
-    return <SortableList items={this.state.items} onSortEnd={this.onSortEnd} />;
+    return <SortableList lockAxis='y' items={this.state.items} onSortEnd={this.onSortEnd} />;
   }
 }
 
