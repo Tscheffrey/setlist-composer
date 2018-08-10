@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import { ellipsis } from 'polished'
-import { FiPlus, FiMenu, } from 'react-icons/fi';
+import { Plus, Menu, } from 'react-feather';
 
 const Container = styled.li`
   list-style-type: none;
@@ -70,13 +70,13 @@ class ListItem extends React.Component {
     return(
       <Container>
         <DragHandleWrapper>
-          <FiMenu/>
+          <Menu/>
         </DragHandleWrapper>
         <FixedSpacer width={12}/>
         <Title>{this.props.item.title}</Title>
         <FlexibleSpacer/>
         <AddButton>
-          <FiPlus/>
+          <Plus/>
         </AddButton>
       </Container>
     )
