@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import 'typeface-rubik'
 import Notifications from 'react-notify-toast';
 
-import Header from '../components/Header'
+import Header from '../components/header'
 import './index.css'
 
 const Layout = ({ children, data }) => (
