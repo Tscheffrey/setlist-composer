@@ -62,10 +62,10 @@ class SortableComponent extends React.Component {
 class Main extends React.Component {
   render(){
     return(
-    <>
-      <SortableComponent/>
-      <CopyText />
-      </>
+      <div>
+        <SortableComponent/>
+        <CopyText />
+      </div>
     )
   }
 }
