@@ -11,9 +11,9 @@ const SortableItem = SortableElement(({value}) =>
 );
 
 const SortableListContainer = styled.ul`
-  background: #efefef;
-  border: 1px solid #efefef;
-  border-radius: 4px;
+  background: ${props => props.theme.colors.ui01 ? props.theme.colors.ui01 : '#121212' };
+  border: ${props => props.theme.sizes.border01 ? props.theme.sizes.border01 : '1px' } solid ${props => props.theme.colors.ui01 ? props.theme.colors.ui01 : '#121212' };
+  border-radius: ${props => props.theme.sizes.borderradius01 ? props.theme.sizes.borderradius01 : '4px' };
   overflow: hidden;
 `
 

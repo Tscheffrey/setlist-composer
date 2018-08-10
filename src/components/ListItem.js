@@ -4,12 +4,13 @@ import { ellipsis } from 'polished'
 import { Plus, Menu, } from 'react-feather';
 
 const Container = styled.li`
+  color: ${props => props.theme.colors.text01 ? props.theme.colors.text01 : '#121212' };
   list-style-type: none;
   margin: 0;
   cursor: grab;
   background: white;
-  border: 1px solid transparent;
-  border-bottom-color: #efefef;
+  border: ${props => props.theme.sizes.border01 ? props.theme.sizes.border01 : '1px' } solid transparent;
+  border-bottom-color: ${props => props.theme.colors.ui01 ? props.theme.colors.ui01 : '#121212' };
   width: 100%;
   display: flex;
   padding: 8px 4px;
@@ -20,6 +21,7 @@ const Container = styled.li`
 `
 
 const Button = styled.div`
+  color: ${props => props.theme.colors.ui02 ? props.theme.colors.ui02 : '#121212' };
   cursor: pointer;
   height: 30px;
   width: 30px;
@@ -40,6 +42,7 @@ const DragHandleWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: ${props => props.theme.colors.ui02 ? props.theme.colors.ui02 : '#121212' };
 `
 
 const Title = styled.span`

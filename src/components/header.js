@@ -5,14 +5,14 @@ import { List } from 'react-feather'
 import { ellipsis } from 'polished'
 
 const Container = styled.div`
-  background: #90D4A8;
+  color: ${props => props.theme.colors.text02 ? props.theme.colors.text02 : 'white' };
+  background: ${props => props.theme.colors.main ? props.theme.colors.main : 'gray' };
   padding: 8px 16px;
   display: flex;
   align-items: center;
 `
 
 const Headline = styled.h1`
-  color: white;
   font-weight: 400;
   text-transform: lowercase;
   user-select: none;
@@ -27,7 +27,7 @@ const ListIcon = styled(List)`
 
 const Header = ({ siteTitle }) => (
   <Container>
-    <ListIcon color='white' size='32'/>
+    <ListIcon size='32'/>
     <Headline>
       {/* <Link to="/"> */}
         {siteTitle}

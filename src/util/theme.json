@@ -1,0 +1,15 @@
+{
+  "colors": {
+    "main":"#90D4A8",
+    "mainbg": "#f5f5f5",
+    "secondarybg": "#FFF",
+    "text01":"#121212",
+    "text02":"#FFF",
+    "ui01":"#efefef",
+    "ui02":"#484848"
+  },
+  "sizes": {
+    "border01": "1px",
+    "borderradius01": "4px"
+  }
+}

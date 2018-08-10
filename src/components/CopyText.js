@@ -9,8 +9,8 @@ const Button = styled.button`
   user-select: none;
   display: flex;
   align-items: center;
-  color: white;
-  background: #90D4A8;
+  color: ${props => props.theme.colors.text02 ? props.theme.colors.text02 : 'white' };
+  background: ${props => props.theme.colors.main ? props.theme.colors.main : 'lightgray' };
   padding: 8px 16px;
   border: 0;
   border-radius: 20px;
@@ -21,7 +21,7 @@ const Text = styled.span`
 `
 
 const Icon = styled(Clipboard)`
-  margin-right: 4px;
+  margin-right: 8px;
 `
 
 class CopyText extends React.Component {
