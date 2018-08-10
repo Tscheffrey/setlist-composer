@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import { List } from 'react-feather';
+import { List } from 'react-feather'
+import { ellipsis } from 'polished'
 
 const Container = styled.div`
   background-color: #90D4A8;
@@ -16,11 +17,17 @@ const Headline = styled.h1`
   text-transform: lowercase;
   user-select: none;
   margin-left: 16px;
+  font-size: 32px;
+  ${ellipsis()}
+`
+
+const ListIcon = styled(List)`
+  flex-shrink: 0;
 `
 
 const Header = ({ siteTitle }) => (
   <Container>
-    <List color='white' size='32'/>
+    <ListIcon color='white' size='32'/>
     <Headline>
       {/* <Link to="/"> */}
         {siteTitle}
