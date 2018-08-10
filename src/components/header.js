@@ -1,33 +1,32 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
+import { List } from 'react-feather';
+
+const Container = styled.div`
+  background-color: #90D4A8;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+`
+
+const Headline = styled.h1`
+  color: white;
+  font-weight: 400;
+  text-transform: lowercase;
+  user-select: none;
+  margin-left: 16px;
+`
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
+  <Container>
+    <List color='white' size='32'/>
+    <Headline>
+      {/* <Link to="/"> */}
+        {siteTitle}
+      {/* </Link> */}
+      </Headline>
+  </Container>
 )
 
 export default Header

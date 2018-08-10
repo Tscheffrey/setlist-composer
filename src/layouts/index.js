@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import 'typeface-rubik'
 
-import Header from '../components/header'
+import Header from '../components/Header'
 import './index.css'
 
 const Layout = ({ children, data }) => (
