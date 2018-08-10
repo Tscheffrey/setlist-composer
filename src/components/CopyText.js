@@ -26,7 +26,7 @@ const Icon = styled(Clipboard)`
 
 class CopyText extends React.Component {
   onCopy(){
-    copy('Hello\n World')
+    copy(this.props.copyText)
     notify.show(this.props.successText, null, 1500)
   }
 

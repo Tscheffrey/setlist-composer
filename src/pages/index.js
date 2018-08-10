@@ -64,11 +64,10 @@ class Main extends React.Component {
     return(
       <div>
         <SortableComponent/>
-        <CopyText />
+        <CopyText copyText={'1. This is a Test\n2. This is a Test\n3. This is a Test'}/>
       </div>
     )
   }
 }
-
 
 export default Main
