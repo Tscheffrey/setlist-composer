@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 import ListItem from '../components/ListItem'
+import CopyText from '../components/CopyText'
 import Shortid from 'shortid'
 import styled from 'styled-components';
 
@@ -58,4 +59,16 @@ class SortableComponent extends React.Component {
   }
 }
 
-export default SortableComponent
+class Main extends React.Component {
+  render(){
+    return(
+    <>
+      <SortableComponent/>
+      <CopyText />
+      </>
+    )
+  }
+}
+
+
+export default Main
