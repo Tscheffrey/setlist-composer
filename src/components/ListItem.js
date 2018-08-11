@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import { ellipsis } from 'polished'
 import { Plus, Menu, } from 'react-feather';
-import Duration from '../components/duration';
+import Duration from '../components/Duration';
 
 const Container = styled.li`
   color: ${props => props.theme.colors.text01 ? props.theme.colors.text01 : '#121212' };
