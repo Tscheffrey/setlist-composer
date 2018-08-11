@@ -30,15 +30,19 @@ const SortableList = SortableContainer(({items}) => {
 const availableItems = [
   {
     title: 'Who We Are',
+    duration: 210,
   },
   {
     title: 'Break The Silence',
+    duration: 103,
   },
   {
     title: 'When You Fall',
+    duration: 320,
   },
   {
     title: 'All or Nothing',
+    duration: 111,
   },
 ]
 

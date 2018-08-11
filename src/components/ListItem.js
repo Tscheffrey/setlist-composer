@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import { ellipsis } from 'polished'
 import { Plus, Menu, } from 'react-feather';
+import Duration from '../components/duration';
 
 const Container = styled.li`
   color: ${props => props.theme.colors.text01 ? props.theme.colors.text01 : '#121212' };
@@ -15,6 +16,7 @@ const Container = styled.li`
   display: flex;
   padding: 8px 4px;
   user-select: none;
+  font-size: 24px;
   &:last-child {
     border-bottom-color: transparent;
   }
@@ -46,7 +48,8 @@ const DragHandleWrapper = styled.div`
 `
 
 const Title = styled.span`
-  font-size: 24px;
+  position: relative;
+  top: 2px;
   ${ellipsis()}
 `
 
@@ -78,6 +81,8 @@ class ListItem extends React.Component {
         <FixedSpacer width={12}/>
         <Title>{this.props.item.title}</Title>
         <FlexibleSpacer/>
+        <Duration duration={this.props.item.duration}/>
+        <FixedSpacer width={12}/>
         <AddButton>
           <Plus/>
         </AddButton>
