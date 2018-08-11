@@ -14,6 +14,7 @@ const Container = styled.li`
   border-bottom-color: ${props => props.theme.colors.ui01 ? props.theme.colors.ui01 : '#121212' };
   width: 100%;
   display: flex;
+  align-items: center;
   padding: 8px 4px;
   user-select: none;
   font-size: 24px;
