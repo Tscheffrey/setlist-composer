@@ -11,7 +11,7 @@ const Container = styled.span`
   align-items: center;
 `
 
-class ListItem extends React.Component {
+class Duration extends React.Component {
   format(){
     if(!this.props.duration) return '00:00'
     let duration = this.props.duration;
@@ -29,4 +29,4 @@ class ListItem extends React.Component {
 
 }
 
-export default ListItem
+export default Duration
