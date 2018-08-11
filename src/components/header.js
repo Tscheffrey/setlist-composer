@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import { List } from 'react-feather'
+import { FileText } from 'react-feather'
 import { ellipsis } from 'polished'
 
 const Container = styled.div`
@@ -21,13 +21,13 @@ const Headline = styled.h1`
   ${ellipsis()}
 `
 
-const ListIcon = styled(List)`
+const Icon = styled(FileText)`
   flex-shrink: 0;
 `
 
 const Header = ({ siteTitle }) => (
   <Container>
-    <ListIcon size='32'/>
+    <Icon size='32'/>
     <Headline>
       {/* <Link to="/"> */}
         {siteTitle}
