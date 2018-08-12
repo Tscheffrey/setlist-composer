@@ -1,8 +1,21 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import { FileText } from 'react-feather'
 import { ellipsis } from 'polished'
+
+const fadeIn = keyframes`
+  from {
+    transform: translateY(-70%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 
 const Container = styled.div`
   color: ${props => props.theme.colors.text02 ? props.theme.colors.text02 : 'white' };
@@ -10,6 +23,7 @@ const Container = styled.div`
   padding: 8px 16px;
   display: flex;
   align-items: center;
+  ${'' /* animation: ${fadeIn} 800ms ease; */}
 `
 
 const Headline = styled.h1`
