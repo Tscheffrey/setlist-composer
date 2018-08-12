@@ -5,6 +5,7 @@ import 'typeface-rubik'
 import Notifications from 'react-notify-toast';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import theme from '../util/theme.json'
+import favicon from '../images/favicon.png'
 
 import Header from '../components/header'
 import './index.css'
@@ -25,6 +26,9 @@ const Layout = ({ children, data }) => (
           // { name: 'description', content: 'Sample' },
           // { name: 'keywords', content: 'sample, something' },
           { name: 'viewport', content: 'width=device-width, user-scalable=no' },
+        ]}
+        link={[
+            { rel: 'shortcut icon', type: 'image/png', href: favicon }
         ]}
       />
       <Notifications/>
