@@ -1,31 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
-import ListItem from '../components/ListItem'
+import List from '../components/List'
 import CopyText from '../components/CopyText'
 import Shortid from 'shortid'
 import styled from 'styled-components';
 
-const SortableItem = SortableElement(({value}) =>
-  <ListItem item={value} />
-);
-
-const SortableListContainer = styled.ul`
-  background: ${props => props.theme.colors.ui01 ? props.theme.colors.ui01 : '#121212' };
-  border: ${props => props.theme.sizes.border01 ? props.theme.sizes.border01 : '1px' } solid ${props => props.theme.colors.ui01 ? props.theme.colors.ui01 : '#121212' };
-  border-radius: ${props => props.theme.sizes.borderradius01 ? props.theme.sizes.borderradius01 : '4px' };
-  overflow: hidden;
-`
-
-const SortableList = SortableContainer(({items}) => {
-  return (
-    <SortableListContainer>
-      {items.map((item, index) => (
-        <SortableItem key={item.key} index={index} value={item} />
-      ))}
-    </SortableListContainer>
-  );
-});
+const SortableList = SortableContainer(List);
 
 const availableItems = [
   {
