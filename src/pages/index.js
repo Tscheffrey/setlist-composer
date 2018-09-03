@@ -7,7 +7,7 @@ import CopyText from '../components/CopyText'
 import Shortid from 'shortid'
 import styled from 'styled-components';
 import Offcanvas from '../components/Offcanvas'
-import {decorate, observable, action} from "mobx"
+import {decorate, observable, action, computed} from "mobx"
 import {observer} from "mobx-react"
 import {moveItem} from "mobx-utils"
 
@@ -43,16 +43,33 @@ class Store {
     }
   }
 
+  get totalDuration() {
+    let duration = 0
+    for (let song of this.songs) {
+      if(song.duration) duration += song.duration
+    }
+    return duration
+  }
+
+  get clipboardText() {
+    let lines = [];
+    for (var i = 0; i < this.songs.length; i++) {
+      let song = this.songs[i]
+      lines.push(`${i+1}.\t${song.title}`)
+    }
+    return lines.join('\n')
+  }
 }
 
 decorate(Store, {
   songs: observable,
   moveSong: action,
+  totalDuration: computed,
 })
 
 const appStore = new Store()
 
-const SortableList = SortableContainer(observer(List));
+const SortableList = SortableContainer(observer(List))
 
 class SortableComponent extends React.Component {
   onSortEnd = ({oldIndex, newIndex}) => {
@@ -81,11 +98,12 @@ class Main extends React.Component {
       <div>
         <Offcanvas open={this.state.offcanvasOpen} onClose={this.toggleOffcanvas}/>
         <SortableComponent/>
-        <CopyText copyText={'1. This is a Test\n2. This is a Test\n3. This is a Test'}/>
+        <CopyText copyText={appStore.clipboardText}/>
         {/* <div onClick={this.toggleOffcanvas}>offcanvas</div> */}
+        {/* <div>Duration: {appStore.totalDuration}</div> */}
       </div>
     )
   }
 }
 
-export default Main
+export default observer(Main)
