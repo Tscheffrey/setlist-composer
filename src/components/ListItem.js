@@ -34,7 +34,7 @@ const Button = styled.div`
   flex-shrink: 0;
 `
 
-const AddButton = Button.extend`
+const AddButton = styled(Button)`
 
 `
 

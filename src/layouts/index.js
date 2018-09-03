@@ -6,9 +6,10 @@ import Notifications from 'react-notify-toast';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import theme from '../util/theme.json'
 import favicon from '../images/favicon.png'
-
 import Header from '../components/header'
 import './index.css'
+import {configure} from "mobx"
+configure({enforceActions: "observed"})
 
 injectGlobal`
   body {

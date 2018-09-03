@@ -1,47 +1,66 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
+import {SortableContainer, SortableElement} from 'react-sortable-hoc';
+import arrayMove from '../util/arrayMove'
 import List from '../components/List'
 import CopyText from '../components/CopyText'
 import Shortid from 'shortid'
 import styled from 'styled-components';
 import Offcanvas from '../components/Offcanvas'
+import {decorate, observable, action} from "mobx"
+import {observer} from "mobx-react"
+import {moveItem} from "mobx-utils"
 
-const SortableList = SortableContainer(List);
+class Store {
+  constructor(){
+    for (let item of this.songs) {
+      item.key = Shortid.generate();
+    }
+  }
 
-const availableItems = [
-  {
-    title: 'Who We Are',
-    duration: 210,
-  },
-  {
-    title: 'Break The Silence',
-    duration: 103,
-  },
-  {
-    title: 'When You Fall',
-    duration: 320,
-  },
-  {
-    title: 'All or Nothing',
-    duration: 111,
-  },
-]
+  songs = [
+    {
+      title: 'Who We Are',
+      duration: 210,
+    },
+    {
+      title: 'Break The Silence',
+      duration: 103,
+    },
+    {
+      title: 'When You Fall',
+      duration: 320,
+    },
+    {
+      title: 'All or Nothing',
+      duration: 111,
+    },
+  ]
 
-for (let item of availableItems) {
-  item.key = Shortid.generate();
+  moveSong(oldIndex, newIndex) {
+    if(oldIndex !== newIndex) {
+      console.log(oldIndex, newIndex);
+      moveItem(this.songs, oldIndex, newIndex);
+    }
+  }
+
 }
+
+decorate(Store, {
+  songs: observable,
+  moveSong: action,
+})
+
+const appStore = new Store()
+
+const SortableList = SortableContainer(observer(List));
+
 class SortableComponent extends React.Component {
-  state = {
-    items: availableItems
-  };
   onSortEnd = ({oldIndex, newIndex}) => {
-    this.setState({
-      items: arrayMove(this.state.items, oldIndex, newIndex),
-    });
+    appStore.moveSong(oldIndex, newIndex)
   };
   render() {
-    return <SortableList lockAxis='y' items={this.state.items} onSortEnd={this.onSortEnd} />;
+    return <SortableList lockAxis='y' items={appStore.songs} onSortEnd={this.onSortEnd} />;
   }
 }
 
