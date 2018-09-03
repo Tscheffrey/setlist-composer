@@ -22,6 +22,7 @@ const Container = styled.menu`
   position: fixed;
   height: 100vh;
   width: 300px;
+  max-width: 100vw;
   top: 0;
   left: 0;
   z-index: 200;
