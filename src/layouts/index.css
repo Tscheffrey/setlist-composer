@@ -1,7 +1,8 @@
 html {
   font-family: Rubik, sans-serif;
 }
-body {
+body,
+menu {
   margin: 0;
   padding: 0;
 }

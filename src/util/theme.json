@@ -11,5 +11,8 @@
   "sizes": {
     "border01": "1px",
     "borderradius01": "4px"
+  },
+  "shadows": {
+    "main":"0 0 30px #0000001f"
   }
 }

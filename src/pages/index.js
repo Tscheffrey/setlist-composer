@@ -5,6 +5,7 @@ import List from '../components/List'
 import CopyText from '../components/CopyText'
 import Shortid from 'shortid'
 import styled from 'styled-components';
+import Offcanvas from '../components/Offcanvas'
 
 const SortableList = SortableContainer(List);
 
@@ -45,11 +46,25 @@ class SortableComponent extends React.Component {
 }
 
 class Main extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      offcanvasOpen: false
+    }
+    this.toggleOffcanvas = this.toggleOffcanvas.bind(this)
+  }
+
+  toggleOffcanvas() {
+    this.setState({offcanvasOpen:!this.state.offcanvasOpen})
+  }
+
   render(){
     return(
       <div>
+        <Offcanvas open={this.state.offcanvasOpen} onClose={this.toggleOffcanvas}/>
         <SortableComponent/>
         <CopyText copyText={'1. This is a Test\n2. This is a Test\n3. This is a Test'}/>
+        {/* <div onClick={this.toggleOffcanvas}>offcanvas</div> */}
       </div>
     )
   }
