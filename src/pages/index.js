@@ -39,7 +39,6 @@ class Store {
 
   moveSong(oldIndex, newIndex) {
     if(oldIndex !== newIndex) {
-      console.log(oldIndex, newIndex);
       moveItem(this.songs, oldIndex, newIndex);
     }
   }
